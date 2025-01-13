@@ -40,3 +40,18 @@ __vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
 trap '__vsc_preexec_all "$_"' DEBUG
 __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 psql --username=freecodecamp --dbname=postgres
+pg_dump -cC --inserts -U freecodecamp universe > universe.sql
+ls --color=auto
+git init
+git add universe.sql
+git commit -m "Add universe.sql dump file"
+git remote add orgin https://github.com/pallaskennedy/mySQL.git
+git branch -M main
+git push -u origin main
+cd /workspace/project
+\l
+ls --color=auto
+git init
+git add universe.sql
+git commit -m "Add universe.sql"
+git add .
